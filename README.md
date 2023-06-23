@@ -1,1 +1,1 @@
-# Problem-Solving-in-Different-Online-Judge
+# Problem-Solving
