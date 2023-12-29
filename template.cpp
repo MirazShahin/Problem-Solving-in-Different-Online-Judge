@@ -1,16 +1,19 @@
 #include <bits/stdc++.h>
-#define optimize()              \
+#define FastIO                  \
   ios_base::sync_with_stdio(0); \
   cin.tie(0);                   \
   cout.tie(0);
-#define ll long long
-#define vll vector<ll>
+
+#define int long long
+#define vll vector<int>
 #define nn '\n'
 #define gcd(a,b) __gcd(a,b)
 #define lcm(a,b) (a*b) / gcd(a,b)
+#define pb push_back
 
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
+
 #define sp " "
 #define pi 3.1415926535897932384626433832795
 
@@ -18,36 +21,40 @@
 #define rall(x) (x).rbegin(), (x).rend()
 
 using namespace std;
-const ll MAX=(ll)1e6+5;
-ll Divisor[MAX];
+const int MAX=(int)1e6+5;
+int Divisor[MAX];
 
 ///_________________________________MiRaZ_HoSsAiN_ShAhIn_________________________________________________///
 
-void divisor_count(){
-    for (int i=1; i<MAX; i++){
-        for(int j=i; j<MAX; j+=i){
+void divisor_count()
+{
+    for (int i=1; i<MAX; i++)
+    {
+        for(int j=i; j<MAX; j+=i)
+        {
             Divisor[j]++;
         }
     }
 }
 
 ///_________________________________________________________________________________________///
-void add()
+void solve()
 {
-    
+ 
+
+
 }
-int main()
+int32_t main()
 {
-    optimize();
+    FastIO;
 
 //   divisor_count();
-//    ll t;
-//    cin>>t;
-//    while(t--){
-    add();
-//    }
+    int test_cases;
+    cin>>test_cases;
+
+    while(test_cases--) {
+        solve();
+    }
 
     return 0;
 }
-
-
