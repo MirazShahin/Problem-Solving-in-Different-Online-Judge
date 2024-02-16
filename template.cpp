@@ -39,9 +39,9 @@ inline ll modDiv(ll a, ll b) { return modMul(a, modInverse(b)); }
 
 ///--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>----The End----<<<<<<<<<<<<<<<<<<<<<<<<<---------------
 
-const ll    N = (ll) 1e6 + 5;
+const ll N = (ll) 1e6 + 5;
 bitset<N >marked;
-vll          prime;
+vll  prime;
 
 ///--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>----MiRaZ_HoSsAiN_ShAhIn----<<<<<<<<<<<<<<<<<<<<<-----------------
 
