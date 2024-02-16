@@ -5,20 +5,25 @@ using namespace std;
   cin.tie(0);                   \
   cout.tie(0);
 
-using ll = long long int;
+#define ll        long long
+#define vll        vector<ll>
+#define nn         '\n'
 
 #define gcd(a,b)   __gcd(a,b)
 #define lcm(a,b)   (a*b) / gcd(a,b)
-#define yes        cout << "YES\n"
-#define no         cout << "NO\n"
+#define YES        cout << "YES\n"
+#define NO         cout << "NO\n"
+#define yes        cout << "Yes\n"
+#define no         cout << "No\n"
 #define sp         " "
 
+#define pi         3.1415926535897932384626433832795
 #define all(x)     (x).begin(), (x).end()
 #define rall(x)    (x).rbegin(), (x).rend()
 
-/// Modular arithmetic
-const ll    MOD = (ll)1e9 + 7;
 
+///--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>----Modular Arithmetic----<<<<<<<<<<<<<<<<<<<<<<<<<---------------
+const  ll MOD = (ll) 1e9 + 7;
 inline void normal(ll &a) { a %= MOD; (a < 0) && (a += MOD); }
 inline ll modMul(ll a, ll b) { a %= MOD, b %= MOD; normal(a), normal(b); return (a*b)%MOD; }
 inline ll modAdd(ll a, ll b) { a %= MOD, b %= MOD; normal(a), normal(b); return (a+b)%MOD; }
@@ -27,15 +32,14 @@ inline ll modPow(ll b, ll p) { ll r = 1; while(p) { if(p&1) r = modMul(r, b); b 
 inline ll modInverse(ll a) { return modPow(a, MOD-2); }  /// When MOD is prime.
 inline ll modDiv(ll a, ll b) { return modMul(a, modInverse(b)); }
 
-//***********************************************  The END ***********************************************************************************
+///--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>----The End----<<<<<<<<<<<<<<<<<<<<<<<<<---------------
 
-vector<ll>  prime;
-const ll N = (ll)1e6;
-ll          fact[N + 5];
-bitset<N + 3>marked;
+const ll    N = (ll) 1e6 + 5;
+bitset<N >marked;
+vll          prime;
 
+///--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>----MiRaZ_HoSsAiN_ShAhIn----<<<<<<<<<<<<<<<<<<<<<-----------------
 
-///**********************************************MiRaZ_HoSsAiN_ShAhIn**************************************************///
 void Sieve()
 {
     for(int i = 4; i <= N; i+=2) {
@@ -54,12 +58,11 @@ void Sieve()
         }
     }
 }
-bool isPrime(int n) {
+bool isPrime(ll n) {
     if(n < 2) return false;
     return !marked[n];
 }
-
-///=========__________===================_________====================_________====================________============
+///---------------------------------------->>>>>---Start---<<<<<---------------------------------------------
 void solve()
 {
 
@@ -68,16 +71,14 @@ int32_t main()
 {
     FastIO;
     Sieve();
-
     int test_case;
     cin >> test_case;
-    int Case = 0;
-    while( test_case--) {
-//    cout << "Case " << Case + 1 << ": ";
+    int Case = 1;
+    while(test_case--) {
+//    cout << "Case " << Case << ": ";
         solve();
         Case++;
     }
 
     return 0;
 }
-
