@@ -27,7 +27,7 @@ void solve() {
     int n, m;
     cin >> n >> m;
     vii v(n), w(m);
-    set<int> se;
+    multiset<int> se;
     for(int i = 0; i < n; i++ ) {
         cin >> v[i];
         se.insert(v[i]);
