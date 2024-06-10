@@ -35,7 +35,11 @@ bitset<N> marked;
 vii  prime;
 int Divisor[N];
 int Divisor_sum[N];
+priority_queue<pair<ll, ll>, vector<pair<ll, ll>>, greater<pair<ll, ll>>> pq; /// Min Heap Declaration
 
+/// Direction Array
+int dx[4]={1,-1,0,0};
+int dy[4]={0,0,1,-1};
 ///--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>----MiRaZ_HoSsAiN_ShAhIn----<<<<<<<<<<<<<<<<<<<<<-----------------
 void divisor_count() {
     for (int i = 1; i < N; i++) {
@@ -73,15 +77,13 @@ bool isPrime(ll n) {
     if(n < 2) return false;
     return !marked[n];
 }
-
 ///---------------------------------------->>>>>---Start---<<<<<---------------------------------------------
 void solve() {
     // Code here....
-
-  
+    cout << "dsjhbvbaydjb" <<
+    
 }
-int32_t main()
-{
+int32_t main() {
     FastIO;
     Sieve();
     divisor_count();
