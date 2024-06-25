@@ -34,7 +34,7 @@ void solve() {
   /// Sliding Window Technique
     while(i < n) {
         sum += v[i];
-        while(sum >= x) {
+        while(sum >= x and j <= i) {
             if(sum == x) {
                 ans++;
             }
