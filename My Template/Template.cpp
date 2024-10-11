@@ -19,8 +19,7 @@ using ll = long long int;
 using ld = long double;
 using ull = unsigned long long;
 
-const  ll MOD = (ll) 1e9 + 7;
-const ll N = (ll) 1e6 + 7;
+const  ll MOD = (ll) 1e9 + 7; 
 // Direction Array...
 int dx8[] = {0, 0, 1, 1, 1, -1, -1, -1}; // 8-direction.......
 int dy8[] = {1,-1, 1, -1, 0, 0, -1, 1};
@@ -49,9 +48,9 @@ template<typename T,typename...hello>void faltu(T arg,const hello&...rest){cerr<
 // #else
 // #define dbg(args...)
 ///__________________________________The End__________________________________|||
-
-bitset<N> marked;
-vii  prime;
+const int N = 1e6;
+bitset < N + 5 > mark;
+vector<ll>primes;
 int Divisor[N];
 int Divisor_sum[N];
 
@@ -72,23 +71,28 @@ void divisor_sum() {
         }
     }
 }
-void Sieve()
-{
-    for(int i = 4; i <= N; i+=2) {
-        marked[i] = 1;
+
+void sieve() {
+    int sq = sqrt(N);
+    for (int i = 4; i <= N; i += 2) {
+        mark[i] = true;
     }
-    for(int i = 3; i * i <= N; i+= 2) {
-        if(!marked[i])
-        for(int j = i * i; j <= N; j += (i << 1)) {
-            marked[j] = 1;
+    for (int i = 3; i <= sq; i += 2) {
+        if (!mark[i]) {
+            for (int j = i * i; j <= N; j += (i << 1)) {
+                mark[j] = true;
+            }
         }
     }
-    prime.push_back(2);
-    for(int i = 3; i <= N; i+=2) {
-        if(!marked[i]) {
-            prime.push_back(i);
-        }
+    primes.push_back(2);
+    for (int i = 3; i <= N; i += 2) {
+        if (!mark[i])
+            primes.push_back(i);
     }
+}
+bool isPrime(int n) {
+    if (n < 2) return false;
+    return !mark[n];
 }
 bool isPrime(ll n) {
     if(n < 2) return false;
