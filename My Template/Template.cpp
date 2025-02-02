@@ -56,7 +56,7 @@ int Divisor_sum[N];
 
 // Min heap declaration___________________________
 priority_queue<pair<ll, ll>, vector<pair<ll, ll>>, greater<pair<ll, ll>>> pq; 
- 
+
 void divisor_count() {
     for (int i = 1; i < N; i++) {
         for(int j = i; j < N; j += i) {
@@ -97,6 +97,30 @@ bool isPrime(int n) {
 bool isPrime(ll n) {
     if(n < 2) return false;
     return !marked[n];
+}
+string string_er_biyog(string &a, string &b) {
+    string ans;
+    int carry = 0;
+    int a_len = (int) a.size();
+    int b_len = (int) b.size();
+    for (int i = 0; i < a_len; ++i) {
+        int a_digit = a[a_len - 1 - i] - '0';
+        int b_digit = (i < b_len) ? b[b_len - 1 - i] - '0' : 0;
+        int sub = a_digit - b_digit - carry;
+        if(sub < 0) {
+            sub += 10;
+            carry = 1;
+        }
+        else {
+            carry = 0;
+        } 
+        ans.push_back(sub + '0');
+    } 
+    while(ans.size() > 1 and ans.back() == '0') {
+        ans.pop_back();
+    } 
+    reverse(ans.begin(), ans.end());
+    return ans;
 }
 
 ///...(__________________________(__MS__MiRAZ_847)____________________________)...///
